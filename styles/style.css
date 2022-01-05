@@ -2,7 +2,28 @@
   min-width: 1100px;
   max-width: 1600px;
   margin: 0 auto;
-  font-family: 'Helvetica Neue', Arial, sans-serif;
+  font-family: "Helvetica Neue", Arial, sans-serif;
+}
+
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.rotation {
+  animation: rotation 20s infinite;
+}
+
+.header__link:hover,
+.feynman__link:hover,
+.footer__column-link:hover,
+.khan__buy-link:hover {
+  opacity: 0.6;
+  transition: opacity 0.4s;
 }
 
 /*---header---*/
@@ -13,6 +34,7 @@
   position: relative;
   display: flex;
   background-color: #f2f2f2;
+  overflow: hidden;
 }
 
 .logo {
@@ -127,9 +149,135 @@
   font-weight: bold;
 }
 
+/*---techniques---*/
+.techniques {
+  padding-bottom: 100px;
+  width: 80%;
+  margin: 0 auto;
+}
+
+.cards {
+  width: 920px;
+  padding: 0;
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  list-style: none;
+}
+
+.cards__item {
+  margin-top: 60px;
+  width: 240px;
+  text-align: center;
+  margin-right: 100px;
+}
+
+.cards__item:nth-child(3) {
+  margin-right: 0;
+}
+
+.cards__image {
+  width: 160px;
+  height: 160px;
+  margin-bottom: 43px;
+  border-radius: 100%;
+}
+
+.cards__title {
+  margin: 0;
+  padding: 0;
+  line-height: 1.15;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.cards__description {
+  margin: 0;
+  padding: 0;
+  line-height: 23px;
+  font-size: 18px;
+  font-weight: normal;
+  margin-top: 16px;
+}
+
+/*---video---*/
+.video {
+  margin-bottom: -50px;
+}
+
+.video__iframes {
+  margin-top: 50px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.video__iframe {
+  width: 515px;
+  height: 316px;
+  margin-right: 20px;
+  border: none;
+}
+
+.video__iframe:last-child {
+  margin-right: 0;
+}
+
+/*---oakley---*/
+.oakley {
+  background-color: #f2f2f2;
+  padding-top: 160px;
+  display: flex;
+  justify-content: center;
+}
+
+/*---feynman---*/
+.feynman {
+  padding-top: 100px;
+  background-color: #f2f2f2;
+  background-image: url(../images/feynman.png);
+  background-position: left bottom;
+  background-repeat: no-repeat;
+  background-size: 867px 637px;
+  position: relative;
+  min-height: 890px;
+  box-sizing: border-box;
+}
+
+.feynman__title {
+  width: 648px;
+  padding: 0;
+  margin: 0 auto 70px;
+  text-align: center;
+  line-height: 1.15;
+  font-size: 120px;
+  font-weight: bold;
+}
+
+.feynman__subtitle {
+  line-height: 51px;
+  font-size: 36px;
+  font-weight: normal;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}
+
+.feynman__link {
+  position: absolute;
+  top: 50%;
+  right: 48px;
+  text-decoration: none;
+  color: #2f80ed;
+  line-height: 51px;
+  font-size: 36px;
+  font-weight: normal;
+}
+
 /*---digits---*/
 .digits {
-  padding-bottom: 100px;
+  padding: 100px 0 100px;
 }
 
 .section-title {
@@ -215,47 +363,69 @@
   color: white;
 }
 
-/*---feynman---*/
-.feynman {
-  padding-top: 100px;
+/*---khan---*/
+.khan {
+  padding-top: 105px;
   background-color: #f2f2f2;
-  background-image: url(../images/feynman.png);
-  background-position: left bottom;
-  background-repeat: no-repeat;
-  background-size: 867px 637px;
-  position: relative;
-  min-height: 890px;
-  box-sizing: border-box;
 }
 
-.feynman__title {
-  width: 648px;
-  padding: 0;
-  margin: 0 auto 70px;
-  text-align: center;
+.khan__container {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.khan__author {
+  line-height: 42px;
+  font-size: 30px;
+}
+
+.khan__title {
   line-height: 1.15;
-  font-size: 120px;
+  font-size: 60px;
   font-weight: bold;
 }
 
-.feynman__subtitle {
-  line-height: 51px;
-  font-size: 36px;
-  font-weight: normal;
-  text-align: center;
-  margin: 0;
-  padding: 0;
+.khan__quote {
+  max-width: 790px;
+  margin: 50px 0 36px;
+  line-height: 34px;
+  font-size: 24px;
 }
 
-.feynman__link {
-  position: absolute;
-  top: 50%;
-  right: 48px;
+.khan__quote-author {
+  margin-bottom: 10px;
+  line-height: 1.15;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.khan__quote-author-subline {
+  line-height: 1.15;
+  font-size: 24px;
+}
+
+.khan__book-container {
+  margin-top: 68px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+
+.khan__book-pic {
+  width: 620px;
+  height: 608px;
+  margin-right: 48px;
+  background-image: url(../images/khan-book.jpg);
+  background-size: 100%;
+  background-repeat: no-repeat;
+}
+
+.khan__buy-link {
+  line-height: 42px;
+  font-size: 30px;
   text-decoration: none;
   color: #2f80ed;
-  line-height: 51px;
-  font-size: 36px;
-  font-weight: normal;
+  align-self: flex-start;
 }
 
 /*---kaufman---*/
@@ -278,8 +448,27 @@
   background-size: cover;
 }
 
+/*---resources---*/
+.resources {
+  padding: 100px 0 217px;
+}
+
+.resources__logo-zone {
+  max-width: 1100px;
+  margin: 80px auto 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  justify-content: space-around;
+}
+
+.resources__logo {
+  width: 270px;
+  height: 38px;
+}
+
 /*---footer---*/
-.footer{
+.footer {
   background-color: #1f1f1f;
   padding-top: 60px;
   padding-bottom: 40px;
@@ -296,7 +485,7 @@
   min-height: 250px;
 }
 
-.footer__column_content_copyright{
+.footer__column_content_copyright {
   flex-basis: 711px;
   display: flex;
   flex-direction: column;
